@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+img{display: block;}
+h1,h2,h3{font-size: 16px;font-weight: normal;}
+a{text-decoration: none;color: #333333;}
+html,body{font-family: Arial;height: 100%;overflow-y: hidden;}
+
+.l{float: left;}
+.r{float: right;}
+.clear::after{content: "";display: block; clear: both;}
+
+#main{overflow: hidden;height: 600px;}
+#main .main_container{height: 100%;overflow: auto;}
