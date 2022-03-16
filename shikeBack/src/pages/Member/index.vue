@@ -49,8 +49,7 @@
                   </p>
                 </div>
                 <div class="clear">
-                  <span class="l">会员等级：</span>
-                  <input class="l" type="text" placeholder="会员等级">
+                  <span class="l">会员等级：5（默认）</span>
                   <p class="l">
                     *会员分为1~5级&nbsp;&nbsp;&nbsp;1级：9.8折&nbsp;&nbsp;&nbsp;2级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;4级：8.5折&nbsp;&nbsp;&nbsp;5级：8折
                   </p>

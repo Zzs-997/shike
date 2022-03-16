@@ -1,5 +1,5 @@
 {
-  "name": "shike",
+  "name": "shikefront",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Zengzisheng <Zeng.zs@outlook.com>",
@@ -58,5 +58,7 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".postcssrc.js",
+  "license": "ISC"
 }
