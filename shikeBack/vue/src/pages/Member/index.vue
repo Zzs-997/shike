@@ -31,18 +31,15 @@
           <!-- 添加会员信息 -->
           <div style="display: block;">
             <form action="#">
-              <div class="member_add l">
-                用户名：
-                <input type="text" placeholder="用户名">
+              <div id="add" class="member_add l">
+                用户名：<input type="text" placeholder="用户名">
                 <br>
-                手机号：
-                <input type="text" placeholder="手机号">
+                手机号：<input type="text" placeholder="手机号">
                 <br>
-                邮箱：
-                <input type="text" placeholder="邮箱">
+                &nbsp; &nbsp; 邮箱：<input type="text" placeholder="邮箱">
                 <br>
                 <div class="clear">
-                  <span class="l">密码：</span>
+                  <span class="l">&nbsp; &nbsp; 密码：</span>
                   <input class="l" type="password" placeholder="密码">
                   <p class="l">
                     * 密码由8-16位字符（字母、数字、_@#.特殊字符）组成!
@@ -54,10 +51,7 @@
                     *会员分为1~5级&nbsp;&nbsp;&nbsp;1级：9.8折&nbsp;&nbsp;&nbsp;2级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;4级：8.5折&nbsp;&nbsp;&nbsp;5级：8折
                   </p>
                 </div>
-                <label class="label">
-                  <input type="submit">
-                  <input type="reset">
-                </label>
+                <button type="button" @click="save">注册</button>
               </div>
             </form>
           </div>
@@ -66,20 +60,22 @@
             <table class="member_table l">
               <thead>
               <tr>
-                <th width="49"><input type="checkbox" disabled></th>
                 <th width="150">用户名</th>
                 <th width="150">手机号</th>
                 <th width="150">邮箱</th>
                 <th width="150">会员等级</th>
+                <th width="50"></th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td><input type="checkbox"></td>
                 <td>曾子升</td>
                 <td>15207074966</td>
                 <td>zeng.zs@outlook.com</td>
                 <td>5级</td>
+                <td>
+                  <button>删除</button>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -89,9 +85,6 @@
               <button>
                 <i class="iconfont icon-sousuo"></i>
               </button>
-            </div>
-            <div class="member_btns r">
-              <button>删除</button>
             </div>
           </div>
           <!-- 更改会员信息 -->
@@ -103,6 +96,7 @@
                 <th width="150">手机号</th>
                 <th width="150">邮箱</th>
                 <th width="150">会员等级</th>
+                <th width="50"></th>
               </tr>
               </thead>
               <tbody>
@@ -111,6 +105,9 @@
                 <td>15207074966</td>
                 <td>zeng.zs@outlook.com</td>
                 <td><input type="text" placeholder="5级"></td>
+                <td>
+                  <button>修改</button>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -121,85 +118,82 @@
                 <i class="iconfont icon-sousuo"></i>
               </button>
             </div>
-            <div class="member_btns r">
-              <button>修改</button>
-            </div>
           </div>
           <!-- 查询会员信息 -->
           <div>
             <table class="member_table l">
               <thead>
               <tr>
-                <th width="150">用户名</th>
-                <th width="150">手机号</th>
-                <th width="150">日期</th>
-                <th>菜品评价</th>
-                <th>消费记录</th>
+                <th width="100">用户名</th>
+                <th width="100">日期</th>
+                <th width="200">菜品评价</th>
+                <th width="200">消费记录</th>
+                <th width="50"></th>
               </tr>
               </thead>
               <tbody>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.01</td>
                 <td>好吃实惠！</td>
                 <td>红烧肉</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.03</td>
                 <td>好吃实惠！</td>
                 <td>茄子炒肉</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.05</td>
                 <td>好吃实惠！</td>
                 <td>红烧排骨</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.07</td>
                 <td>好吃实惠！</td>
                 <td>剁椒鱼头</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.09</td>
                 <td>好吃实惠！</td>
                 <td>啤酒鸭</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.11</td>
                 <td>好吃实惠！</td>
                 <td>干锅牛腩</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.13</td>
                 <td>好吃实惠！</td>
                 <td>土豆烧鸡</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.15</td>
                 <td>好吃实惠！</td>
                 <td>黄豆鸡脚</td>
+                <td></td>
               </tr>
               <tr>
                 <td>曾子升</td>
-                <td>15207074966</td>
                 <td>2022.01.20</td>
                 <td>好吃实惠！</td>
                 <td>鱼香肉丝</td>
+                <td></td>
               </tr>
               </tbody>
             </table>
@@ -228,13 +222,29 @@
 </template>
 
 <script>
+import request from "../../../utils/request";
+
 export default {
   name: '',
-  mounted() {
+  mounted: function () {
     this.change();
   },
-  methods:{
-    change () {
+  methods: {
+    save() {
+      var oAdd = document.getElementById("add");
+      var aInputs = oAdd.getElementsByTagName("input");
+      var data = {
+        name: aInputs[0].value,
+        phone: aInputs[1].value,
+        email: aInputs[2].value,
+        password: aInputs[3].value,
+        rank: "rank" //默认值
+      };
+      request.post("/member", data).then(res => {
+        console.log(res);
+      });
+    },
+    change() {
       var oDiv1 = document.getElementById("projectList_btns");
       var oDiv2 = document.getElementById("projectList_cons");
       var aLis = oDiv1.getElementsByTagName("li");
@@ -344,9 +354,11 @@ export default {
   margin-left: 20px;
 }
 
-#projectList .member_add .label {
-  width: 200px;
-  margin-left: 100px;
+#projectList .member_add button {
+  width: 100px;
+  height: 30px;
+  margin: 30px 80px;
+  cursor: pointer;
 }
 
 #projectList .member_add .label input {
@@ -432,8 +444,18 @@ export default {
   background: #f9f9f9;
 }
 
+#projectList .member_table button {
+  width: 100%;
+  height: 31px;
+  border: none;
+  border-left: 1px solid #A4A4A4;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
 #projectList .member_table th:first-child,
-#projectList .member_table td:first-child {
+#projectList .member_table td:first-child,
+#projectList .member_table td:last-child {
   text-align: center;
   text-indent: 0;
 }
@@ -444,6 +466,10 @@ export default {
 
 #projectList .member_table td {
   text-indent: 12px;
+}
+
+#projectList .member_table input {
+  width: 80%;
 }
 
 /* 换页 */

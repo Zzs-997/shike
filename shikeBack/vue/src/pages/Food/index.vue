@@ -33,11 +33,12 @@
             <table class="food_table l">
               <thead>
               <tr>
-                <th width="49"><input type="checkbox" disabled></th>
-                <th width="150">菜品名称</th>
+                <th width="50"><input type="checkbox" disabled></th>
+                <th width="100">菜品名称</th>
                 <th width="100">菜品价格</th>
-                <th width="150">菜品图片</th>
-                <th>菜品描述</th>
+                <th width="100">菜品图片</th>
+                <th width="250">菜品描述</th>
+                <th width="50"></th>
               </tr>
               </thead>
               <tbody>
@@ -47,6 +48,9 @@
                 <td>￥6.88</td>
                 <td><img src="./images/麻婆豆腐.jpg" alt=""></td>
                 <td>豆腐；麻辣</td>
+                <td>
+                  <button>添加</button>
+                </td>
               </tr>
               <tr>
                 <td><input type="checkbox"></td>
@@ -54,6 +58,9 @@
                 <td>￥12</td>
                 <td><img src="./images/手撕包菜.jpeg" alt=""></td>
                 <td>包菜；素；热；酸辣</td>
+                <td>
+                  <button>添加</button>
+                </td>
               </tr>
               <tr>
                 <td><input type="checkbox"></td>
@@ -61,6 +68,9 @@
                 <td>￥15</td>
                 <td><img src="./images/茄子炒肉.jpg" alt=""></td>
                 <td>茄子、猪肉；香味</td>
+                <td>
+                  <button>添加</button>
+                </td>
               </tr>
               <tr>
                 <td><input type="checkbox"></td>
@@ -68,6 +78,9 @@
                 <td>￥10</td>
                 <td><img src="./images/西红柿炒蛋.jpeg" alt=""></td>
                 <td>鸡蛋、西红柿；荤；热；不辣</td>
+                <td>
+                  <button>添加</button>
+                </td>
               </tr>
               <tr>
                 <td><input type="checkbox"></td>
@@ -75,6 +88,9 @@
                 <td>￥19.6</td>
                 <td><img src="./images/小炒牛肉.jpeg" alt=""></td>
                 <td>牛肉、辣椒；荤；热；辣</td>
+                <td>
+                  <button>添加</button>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -95,12 +111,57 @@
               <a href="#">下一页</a>
               <a href="#">尾页</a>
             </div>
-            <div class="food_add r">
-              <button>更换</button>
-            </div>
           </div>
           <!-- 添加菜品选项 -->
           <div>
+            <table class="food_table l">
+              <thead>
+              <tr>
+                <th width="100">菜品名称</th>
+                <th width="100">菜品价格</th>
+                <th width="100">菜品图片</th>
+                <th width="300">菜品描述</th>
+                <th width="50"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>麻婆豆腐</td>
+                <td>￥6.88</td>
+                <td><img src="./images/麻婆豆腐.jpg" alt=""></td>
+                <td>豆腐；麻辣</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>手撕包菜</td>
+                <td>￥12</td>
+                <td><img src="./images/手撕包菜.jpeg" alt=""></td>
+                <td>包菜；素；热；酸辣</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>茄子炒肉</td>
+                <td>￥15</td>
+                <td><img src="./images/茄子炒肉.jpg" alt=""></td>
+                <td>茄子、猪肉；香味</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>西红柿炒蛋</td>
+                <td>￥10</td>
+                <td><img src="./images/西红柿炒蛋.jpeg" alt=""></td>
+                <td>鸡蛋、西红柿；荤；热；不辣</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>小炒牛肉</td>
+                <td>￥19.6</td>
+                <td><img src="./images/小炒牛肉.jpeg" alt=""></td>
+                <td>牛肉、辣椒；荤；热；辣</td>
+                <td></td>
+              </tr>
+              </tbody>
+            </table>
             <form action="#">
               <div class="food_upload l">
                 菜品名称：
@@ -123,50 +184,7 @@
                 </label>
               </div>
             </form>
-            <table class="food_table l">
-              <thead>
-              <tr>
-                <th width="150">菜品名称</th>
-                <th width="150">菜品价格</th>
-                <th width="150">菜品图片</th>
-                <th>菜品描述</th>
-
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>麻婆豆腐</td>
-                <td>￥6.88</td>
-                <td><img src="./images/麻婆豆腐.jpg" alt=""></td>
-                <td>豆腐；麻辣</td>
-              </tr>
-              <tr>
-                <td>手撕包菜</td>
-                <td>￥12</td>
-                <td><img src="./images/手撕包菜.jpeg" alt=""></td>
-                <td>包菜；素；热；酸辣</td>
-              </tr>
-              <tr>
-                <td>茄子炒肉</td>
-                <td>￥15</td>
-                <td><img src="./images/茄子炒肉.jpg" alt=""></td>
-                <td>茄子、猪肉；香味</td>
-              </tr>
-              <tr>
-                <td>西红柿炒蛋</td>
-                <td>￥10</td>
-                <td><img src="./images/西红柿炒蛋.jpeg" alt=""></td>
-                <td>鸡蛋、西红柿；荤；热；不辣</td>
-              </tr>
-              <tr>
-                <td>小炒牛肉</td>
-                <td>￥19.6</td>
-                <td><img src="./images/小炒牛肉.jpeg" alt=""></td>
-                <td>牛肉、辣椒；荤；热；辣</td>
-              </tr>
-              </tbody>
-            </table>
-            <div class="food_page r">
+            <div class="food_page l">
               <a href="#">共12条</a>
               <a href="#">首页</a>
               <a href="#">上一页</a>
@@ -182,48 +200,58 @@
             <table class="food_table l">
               <thead>
               <tr>
-                <th width="49"><input type="checkbox" disabled></th>
-                <th width="150">菜品名称</th>
+                <th width="100">菜品名称</th>
                 <th width="100">菜品价格</th>
-                <th width="150">菜品图片</th>
-                <th>菜品描述</th>
+                <th width="100">菜品图片</th>
+                <th width="300">菜品描述</th>
+                <th width="50"></th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td><input type="checkbox"></td>
                 <td>麻婆豆腐</td>
                 <td>￥6.88</td>
                 <td><img src="./images/麻婆豆腐.jpg" alt=""></td>
                 <td>豆腐；麻辣</td>
+                <td>
+                  <button>删除</button>
+                </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
                 <td>手撕包菜</td>
                 <td>￥12</td>
                 <td><img src="./images/手撕包菜.jpeg" alt=""></td>
                 <td>包菜；素；热；酸辣</td>
+                <td>
+                  <button>删除</button>
+                </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
                 <td>茄子炒肉</td>
                 <td>￥15</td>
                 <td><img src="./images/茄子炒肉.jpg" alt=""></td>
                 <td>茄子、猪肉；香味</td>
+                <td>
+                  <button>删除</button>
+                </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
                 <td>西红柿炒蛋</td>
                 <td>￥10</td>
                 <td><img src="./images/西红柿炒蛋.jpeg" alt=""></td>
                 <td>鸡蛋、西红柿；荤；热；不辣</td>
+                <td>
+                  <button>删除</button>
+                </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
                 <td>小炒牛肉</td>
                 <td>￥19.6</td>
                 <td><img src="./images/小炒牛肉.jpeg" alt=""></td>
                 <td>牛肉、辣椒；荤；热；辣</td>
+                <td>
+                  <button>删除</button>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -244,19 +272,17 @@
               <a href="#">下一页</a>
               <a href="#">尾页</a>
             </div>
-            <div class="food_del r">
-              <button>删除</button>
-            </div>
           </div>
           <!-- 设置菜品价格 -->
           <div>
             <table class="food_table l">
               <thead>
               <tr>
-                <th width="150">菜品名称</th>
-                <th width="150">菜品价格</th>
-                <th width="150">菜品图片</th>
-                <th>菜品描述</th>
+                <th width="100">菜品名称</th>
+                <th width="100">菜品价格</th>
+                <th width="100">菜品图片</th>
+                <th width="300">菜品描述</th>
+                <th width="50"></th>
               </tr>
               </thead>
               <tbody>
@@ -265,30 +291,45 @@
                 <td>￥<input type="text" placeholder="6.88"></td>
                 <td><img src="./images/麻婆豆腐.jpg" alt=""></td>
                 <td>豆腐；麻辣</td>
+                <td>
+                  <button>修改</button>
+                </td>
               </tr>
               <tr>
                 <td>手撕包菜</td>
                 <td>￥<input type="text" placeholder="12"></td>
                 <td><img src="./images/手撕包菜.jpeg" alt=""></td>
                 <td>包菜；素；热；酸辣</td>
+                <td>
+                  <button>修改</button>
+                </td>
               </tr>
               <tr>
                 <td>茄子炒肉</td>
                 <td>￥<input type="text" placeholder="15"></td>
                 <td><img src="./images/茄子炒肉.jpg" alt=""></td>
                 <td>茄子、猪肉；香味</td>
+                <td>
+                  <button>修改</button>
+                </td>
               </tr>
               <tr>
                 <td>西红柿炒蛋</td>
                 <td>￥<input type="text" placeholder="10"></td>
                 <td><img src="./images/西红柿炒蛋.jpeg" alt=""></td>
                 <td>鸡蛋、西红柿；荤；热；不辣</td>
+                <td>
+                  <button>修改</button>
+                </td>
               </tr>
               <tr>
                 <td>小炒牛肉</td>
                 <td>￥<input type="text" placeholder="19.6"></td>
                 <td><img src="./images/小炒牛肉.jpeg" alt=""></td>
                 <td>牛肉、辣椒；荤；热；辣</td>
+                <td>
+                  <button>修改</button>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -308,9 +349,6 @@
               <a href="#">3</a>
               <a href="#">下一页</a>
               <a href="#">尾页</a>
-            </div>
-            <div class="food_mod r">
-              <button>修改</button>
             </div>
           </div>
         </div>
@@ -322,11 +360,11 @@
 <script>
 export default {
   name: '',
-  mounted() {
+  mounted:function () {
     this.change()
   },
-  methods:{
-    change () {
+  methods: {
+    change() {
       var oDiv1 = document.getElementById("projectList_btns");
       var oDiv2 = document.getElementById("projectList_cons");
       var aLis = oDiv1.getElementsByTagName("li");
@@ -418,7 +456,7 @@ export default {
   margin: 15px 0 0 20px;
 }
 
-#projectList #projectList_cons>div {
+#projectList #projectList_cons > div {
   display: none;
 }
 
@@ -504,22 +542,7 @@ export default {
   color: #A4A4A4;
 }
 
-/* 添加、删除、修改按钮 */
-#projectList .food_add button,
-#projectList .food_del button,
-#projectList .food_mod button {
-  width: 60px;
-  height: 40px;
-  background: white;
-  border: 1px solid #A4A4A4;
-  margin-right: 700px;
-  margin-top: 5px;
-  border-radius: 5px;
-}
-
-#projectList .food_add button,
-#projectList .food_del button,
-#projectList .food_mod button:hover {
+#projectList .food_add button:hover {
   cursor: pointer;
 }
 
@@ -558,8 +581,18 @@ export default {
   background: #f9f9f9;
 }
 
+#projectList .food_table button {
+  width: 100%;
+  height: 57px;
+  border: none;
+  border-left: 1px solid #A4A4A4;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
 #projectList .food_table th:first-child,
-#projectList .food_table td:first-child {
+#projectList .food_table td:first-child,
+#projectList .food_table td:last-child {
   text-align: center;
   text-indent: 0;
 }
