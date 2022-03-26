@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import '../static/common.css'
 import '../static/iconfont/iconfont.css'
+import cookie from "../utils/cookie.js"
 
+Vue.prototype.cookie = cookie;
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
@@ -21,6 +23,6 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router, //注册路由 注意是小写
-  components: { App },
-  template: '<App/>'
+  components: {App},
+  template: '<App/>',
 })

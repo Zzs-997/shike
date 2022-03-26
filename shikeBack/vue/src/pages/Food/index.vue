@@ -33,7 +33,7 @@
             <table class="food_table l">
               <thead>
               <tr>
-                <th width="50"><input type="checkbox" disabled></th>
+                <th width="50"></th>
                 <th width="100">菜品名称</th>
                 <th width="100">菜品价格</th>
                 <th width="100">菜品图片</th>
@@ -43,53 +43,91 @@
               </thead>
               <tbody>
               <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" disabled></td>
                 <td>麻婆豆腐</td>
                 <td>￥6.88</td>
                 <td><img src="./images/麻婆豆腐.jpg" alt=""></td>
                 <td>豆腐；麻辣</td>
                 <td>
                   <button>添加</button>
+                  <button>删除</button>
                 </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" disabled></td>
                 <td>手撕包菜</td>
                 <td>￥12</td>
                 <td><img src="./images/手撕包菜.jpeg" alt=""></td>
                 <td>包菜；素；热；酸辣</td>
                 <td>
                   <button>添加</button>
+                  <button>删除</button>
                 </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" disabled></td>
                 <td>茄子炒肉</td>
                 <td>￥15</td>
                 <td><img src="./images/茄子炒肉.jpg" alt=""></td>
                 <td>茄子、猪肉；香味</td>
                 <td>
                   <button>添加</button>
+                  <button>删除</button>
                 </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" disabled></td>
                 <td>西红柿炒蛋</td>
                 <td>￥10</td>
                 <td><img src="./images/西红柿炒蛋.jpeg" alt=""></td>
                 <td>鸡蛋、西红柿；荤；热；不辣</td>
                 <td>
                   <button>添加</button>
+                  <button>删除</button>
                 </td>
               </tr>
               <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" disabled></td>
                 <td>小炒牛肉</td>
                 <td>￥19.6</td>
                 <td><img src="./images/小炒牛肉.jpeg" alt=""></td>
                 <td>牛肉、辣椒；荤；热；辣</td>
                 <td>
                   <button>添加</button>
+                  <button>删除</button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" disabled></td>
+                <td>香辣猪舌头</td>
+                <td>￥16.8</td>
+                <td><img src="./images/香辣猪舌头.jpeg" alt=""></td>
+                <td>猪舌头、辣椒；荤；热；中辣</td>
+                <td>
+                  <button>添加</button>
+                  <button>删除</button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" disabled></td>
+                <td>香辣猪舌头</td>
+                <td>￥16.8</td>
+                <td><img src="./images/香辣猪舌头.jpeg" alt=""></td>
+                <td>猪舌头、辣椒；荤；热；中辣</td>
+                <td>
+                  <button>添加</button>
+                  <button>删除</button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" disabled></td>
+                <td>香辣猪舌头</td>
+                <td>￥16.8</td>
+                <td><img src="./images/香辣猪舌头.jpeg" alt=""></td>
+                <td>猪舌头、辣椒；荤；热；中辣</td>
+                <td>
+                  <button>添加</button>
+                  <button>删除</button>
                 </td>
               </tr>
               </tbody>
@@ -100,16 +138,6 @@
               <button>
                 <i class="iconfont icon-sousuo"></i>
               </button>
-            </div>
-            <div class="food_page l">
-              <a href="#">共12条</a>
-              <a href="#">首页</a>
-              <a href="#">上一页</a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">下一页</a>
-              <a href="#">尾页</a>
             </div>
           </div>
           <!-- 添加菜品选项 -->
@@ -173,27 +201,14 @@
                 菜品描述：
                 <input type="text" placeholder="菜品描述">
                 <br>
-                <label class="label_1">
+                <label class="label">
                   <input type="file" accept="image/png, image/jpeg, image/gif, image/jpg">
                   <i class="iconfont icon-yunshangchuan_o"></i>&nbsp;&nbsp;上传菜品图片
                 </label>
                 <br>
-                <label class="label_2">
-                  <input type="submit">
-                  <input type="reset">
-                </label>
+                <button>添加</button>
               </div>
             </form>
-            <div class="food_page l">
-              <a href="#">共12条</a>
-              <a href="#">首页</a>
-              <a href="#">上一页</a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">下一页</a>
-              <a href="#">尾页</a>
-            </div>
           </div>
           <!-- 删除菜品选项 -->
           <div>
@@ -261,16 +276,6 @@
               <button>
                 <i class="iconfont icon-sousuo"></i>
               </button>
-            </div>
-            <div class="food_page l">
-              <a href="#">共12条</a>
-              <a href="#">首页</a>
-              <a href="#">上一页</a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">下一页</a>
-              <a href="#">尾页</a>
             </div>
           </div>
           <!-- 设置菜品价格 -->
@@ -340,16 +345,6 @@
                 <i class="iconfont icon-sousuo"></i>
               </button>
             </div>
-            <div class="food_page l">
-              <a href="#">共12条</a>
-              <a href="#">首页</a>
-              <a href="#">上一页</a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">下一页</a>
-              <a href="#">尾页</a>
-            </div>
           </div>
         </div>
       </section>
@@ -360,22 +355,22 @@
 <script>
 export default {
   name: '',
-  mounted:function () {
+  mounted: function () {
     this.change()
   },
   methods: {
     change() {
-      var oDiv1 = document.getElementById("projectList_btns");
-      var oDiv2 = document.getElementById("projectList_cons");
-      var aLis = oDiv1.getElementsByTagName("li");
-      var aDivs = oDiv2.children;
+      let oDiv1 = document.getElementById("projectList_btns");
+      let oDiv2 = document.getElementById("projectList_cons");
+      let aLis = oDiv1.getElementsByTagName("li");
+      let aDivs = oDiv2.children;
       // 给每一个按钮添加点击函数
-      for (var i = 0; i < aLis.length; i++) {
+      for (let i = 0; i < aLis.length; i++) {
         // 拿到当前按钮的下标
         aLis[i].index = i;
         aLis[i].onclick = function () {
           // 取消所有按钮的样式
-          for (var j = 0; j < aLis.length; j++) {
+          for (let j = 0; j < aLis.length; j++) {
             aLis[j].className = '';
             aDivs[j].style.display = 'none';
           }
@@ -460,10 +455,6 @@ export default {
   display: none;
 }
 
-#projectList #projectList_cons .food_upload button {
-  width: 50px;
-}
-
 /* 添加 */
 #projectList .food_upload {
   font-size: 14px;
@@ -475,7 +466,7 @@ export default {
   margin-bottom: 20px;
 }
 
-#projectList .food_upload .label_1 {
+#projectList .food_upload .label {
   display: block;
   width: 130px;
   height: 32px;
@@ -488,20 +479,21 @@ export default {
   margin: 0 auto;
 }
 
-#projectList .food_upload .label_1 i {
+#projectList .food_upload .label i {
   font-size: 22px;
   position: relative;
   top: 3px;
   line-height: 22px;
 }
 
-#projectList .food_upload .label_1 input {
+#projectList .food_upload .label input {
   display: none;
 }
 
-#projectList .food_upload .label_2 {
+#projectList .food_upload button {
   display: block;
-  width: 68px;
+  height: 30px;
+  width: 100px;
   margin: 0 auto;
 }
 
@@ -556,7 +548,7 @@ export default {
 }
 
 #projectList .food_table tr {
-  height: 58px;
+  height: 54px;
   border-bottom: 1px solid #A4A4A4;
 }
 
@@ -582,11 +574,10 @@ export default {
 }
 
 #projectList .food_table button {
-  width: 100%;
-  height: 57px;
+  height: 30px;
+  width: 35px;
   border: none;
-  border-left: 1px solid #A4A4A4;
-  background: #f9f9f9;
+  background: white;
   cursor: pointer;
 }
 
@@ -607,22 +598,4 @@ export default {
   margin-left: 12px;
 }
 
-/* 换页 */
-#projectList .food_page {
-  font-size: 0;
-  line-height: 24px;
-  margin: 15px 48px 0 0;
-}
-
-#projectList .food_page a {
-  border: 1px #A4A4A4 solid;
-  padding: 6px 9px;
-  font-size: 12px;
-  margin-left: 10px;
-}
-
-#projectList .food_page a.active {
-  background: #D80C1C;
-  color: white;
-}
 </style>
