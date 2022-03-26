@@ -32,26 +32,22 @@
           <div style="display: block;">
             <form action="#">
               <div id="add" class="member_add l">
-                用户名：<input type="text" placeholder="用户名">
+                用户名：<input type="text" placeholder="用户名" required>
                 <br>
-                手机号：<input type="text" placeholder="手机号">
+                手机号：<input type="text" placeholder="手机号" required>
+                <span id="phone_text">* 请输入正确的手机号！</span>
                 <br>
-                &nbsp; &nbsp; 邮箱：<input type="text" placeholder="邮箱">
+                &nbsp; &nbsp; 邮箱：<input type="text" placeholder="邮箱" required>
+                <span id="email_text">* 请输入正确的邮箱！</span>
                 <br>
+                &nbsp; &nbsp; 密码：<input type="password" placeholder="密码" required>
                 <div class="clear">
-                  <span class="l">&nbsp; &nbsp; 密码：</span>
-                  <input class="l" type="password" placeholder="密码">
-                  <p class="l">
-                    * 密码由8-16位字符（字母、数字、_@#.特殊字符）组成!
-                  </p>
-                </div>
-                <div class="clear">
-                  <span class="l">会员等级：5（默认）</span>
-                  <p class="l">
+                  <p class="l">会员等级：5（默认）</p>
+                  <p class="l" style="color: #D80C1C">
                     *会员分为1~5级&nbsp;&nbsp;&nbsp;1级：9.8折&nbsp;&nbsp;&nbsp;2级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;4级：8.5折&nbsp;&nbsp;&nbsp;5级：8折
                   </p>
                 </div>
-                <button type="button" @click="save">注册</button>
+                <button type="button" @click="saveMember">注册</button>
               </div>
             </form>
           </div>
@@ -67,22 +63,13 @@
                 <th width="50"></th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
-                <td>曾子升</td>
-                <td>15207074966</td>
-                <td>zeng.zs@outlook.com</td>
-                <td>5级</td>
-                <td>
-                  <button>删除</button>
-                </td>
-              </tr>
+              <tbody id="deleteTable">
               </tbody>
             </table>
             <!-- 搜索框 -->
-            <div class="member_search">
-              <input type="text" placeholder="请输入关键字">
-              <button>
+            <div id="deleteMember" class="member_search">
+              <input type="text" placeholder="请输入手机号">
+              <button @click="findDelMember">
                 <i class="iconfont icon-sousuo"></i>
               </button>
             </div>
@@ -99,22 +86,13 @@
                 <th width="50"></th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
-                <td>曾子升</td>
-                <td>15207074966</td>
-                <td>zeng.zs@outlook.com</td>
-                <td><input type="text" placeholder="5级"></td>
-                <td>
-                  <button>修改</button>
-                </td>
-              </tr>
+              <tbody id="modifyTable">
               </tbody>
             </table>
             <!-- 搜索框 -->
-            <div class="member_search">
-              <input type="text" placeholder="请输入关键字">
-              <button>
+            <div id="modifyMember" class="member_search">
+              <input type="text" placeholder="请输入手机号">
+              <button @click="findModMember">
                 <i class="iconfont icon-sousuo"></i>
               </button>
             </div>
@@ -124,95 +102,134 @@
             <table class="member_table l">
               <thead>
               <tr>
-                <th width="100">用户名</th>
+                <th width="100">手机号</th>
                 <th width="100">日期</th>
                 <th width="200">菜品评价</th>
                 <th width="200">消费记录</th>
-                <th width="50"></th>
+                <th width="50">用户名</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.01</td>
                 <td>好吃实惠！</td>
                 <td>红烧肉</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.03</td>
                 <td>好吃实惠！</td>
                 <td>茄子炒肉</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.05</td>
                 <td>好吃实惠！</td>
                 <td>红烧排骨</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.07</td>
                 <td>好吃实惠！</td>
                 <td>剁椒鱼头</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.09</td>
                 <td>好吃实惠！</td>
                 <td>啤酒鸭</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.11</td>
                 <td>好吃实惠！</td>
                 <td>干锅牛腩</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.13</td>
                 <td>好吃实惠！</td>
                 <td>土豆烧鸡</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.15</td>
                 <td>好吃实惠！</td>
                 <td>黄豆鸡脚</td>
-                <td></td>
+                <td>曾子升</td>
               </tr>
               <tr>
-                <td>曾子升</td>
+                <td>15207074966</td>
                 <td>2022.01.20</td>
                 <td>好吃实惠！</td>
                 <td>鱼香肉丝</td>
-                <td></td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
               </tr>
               </tbody>
             </table>
             <!-- 搜索框 -->
             <div class="member_search l">
-              <input type="text" placeholder="请输入关键字">
+              <input type="text" placeholder="请输入手机号">
               <button>
                 <i class="iconfont icon-sousuo"></i>
               </button>
-            </div>
-            <div class="member_page l">
-              <a href="#">共12条</a>
-              <a href="#">首页</a>
-              <a href="#">上一页</a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">下一页</a>
-              <a href="#">尾页</a>
             </div>
           </div>
         </div>
@@ -223,39 +240,152 @@
 
 <script>
 import request from "../../../utils/request";
+import axios from "axios";
 
 export default {
   name: '',
   mounted: function () {
     this.change();
+    this.test();
   },
   methods: {
-    save() {
-      var oAdd = document.getElementById("add");
-      var aInputs = oAdd.getElementsByTagName("input");
-      var data = {
+    //查找会员，并且把会员添加到更改会员信息的列表
+    findModMember() {
+      let oMod = document.getElementById("modifyMember");
+      let oModTable = document.getElementById("modifyTable");
+      let oInput = oMod.getElementsByTagName("input");
+      let Phone = oInput[0].value;
+      request.get('/member/selectMemberByMemberPhone/' + Phone).then(function (result) {
+        let arr = result.data;
+        let str = `<tr>
+                    <td>${arr.name}</td>
+                    <td>${arr.phone}</td>
+                    <td>${arr.email}</td>
+                    <td>
+                        <input type="text" placeholder="${arr.rank}" style="width: 70%">
+                    </td>
+                    <td style="text-indent: 0px">
+                        <button style="height: 30px;width: 100%; border: none;background: white;cursor: pointer;">更改</button>
+                    </td>
+                  </tr>`;
+        oModTable.innerHTML = str;
+      }).catch(function (msg) {
+        // alert(msg);
+        alert("查询失败，未查询到此手机号的会员")
+      });
+    },
+    //查找会员，并且把会员添加到删除会员的列表
+    findDelMember() {
+      let oDel = document.getElementById("deleteMember");
+      let oDelTable = document.getElementById("deleteTable");
+      let oInput = oDel.getElementsByTagName("input");
+      let Phone = oInput[0].value;
+      request.get('/member/selectMemberByMemberPhone/' + Phone).then(function (result) {
+        let arr = result.data;
+        let str = `<tr>
+                    <td>${arr.name}</td>
+                    <td>${arr.phone}</td>
+                    <td>${arr.email}</td>
+                    <td>${arr.rank}</td>
+                    <td  style="text-indent: 0px">
+                        <button style="height: 30px;width: 100%;border: none;background: white;cursor: pointer;">删除</button>
+                    </td>
+                  </tr>`;
+        oDelTable.innerHTML = str;
+      }).catch(function (msg) {
+        // alert(msg);
+        alert("查询失败，未查询到此手机号的会员")
+      });
+    },
+    //添加会员
+    saveMember() {
+      let oAdd = document.getElementById("add");
+      let aInputs = oAdd.getElementsByTagName("input");
+      let data = {
         name: aInputs[0].value,
         phone: aInputs[1].value,
         email: aInputs[2].value,
         password: aInputs[3].value,
-        rank: "rank" //默认值
+        rank: 5
       };
-      request.post("/member", data).then(res => {
-        console.log(res);
+      if (!data.name){
+        alert("用户名不能为空");
+        return false;
+      }
+      if (!data.phone){
+        alert("手机号不能为空");
+        return false;
+      }
+      if (!data.email){
+        alert("邮箱不能为空");
+        return false;
+      }
+      if (!data.password){
+        alert("密码不能为空");
+        return false;
+      }
+      request.get('/member/selectMemberByMemberPhone/' + data.phone).then(function (result) {
+        alert("对不起，该号码已被注册");
+      }).catch(function (msg) {
+        request.post('/member/createMember', data).then(function (result) {
+          alert("注册成功");
+        }).catch(function (meg) {
+          alert("注册失败");
+          return false;
+        });
       });
+
     },
+    //添加会员验证
+    test() {
+      // 添加失去焦点事件
+      // 手机号验证
+      let oAdd = document.getElementById("add");
+      let aInputs = oAdd.getElementsByTagName("input");
+      let oText1 = document.getElementById("phone_text");
+      let oText2 = document.getElementById("email_text");
+      let ifPhone = false;
+      let ifEmail = false;
+
+      // 添加失去焦点事件
+      // 手机号验证
+      aInputs[1].onblur = function () {
+        let oValue1 = aInputs[1].value;
+
+        if (!/^1\d{10}$/.test(oValue1)) {
+          oText1.innerHTML = "* 手机号有误！";
+          oText1.style.color = "red";
+        } else {
+          oText1.innerHTML = "* 该手机号可注册√";
+          oText1.style.color = "green";
+        }
+      }
+      // 邮箱验证
+      aInputs[2].onblur = function () {
+        let oValue2 = aInputs[2].value;
+
+        if (oValue2.length < 5) {
+          oText2.innerHTML = "* 邮箱地址有误！";
+          oText2.style.color = "red";
+        } else {
+          oText2.innerHTML = "* 该邮箱可注册√";
+          oText2.style.color = "green";
+        }
+      }
+    },
+    //转换页面
     change() {
-      var oDiv1 = document.getElementById("projectList_btns");
-      var oDiv2 = document.getElementById("projectList_cons");
-      var aLis = oDiv1.getElementsByTagName("li");
-      var aDivs = oDiv2.children;
+      let oDiv1 = document.getElementById("projectList_btns");
+      let oDiv2 = document.getElementById("projectList_cons");
+      let aLis = oDiv1.getElementsByTagName("li");
+      let aDivs = oDiv2.children;
       // 给每一个按钮添加点击函数
-      for (var i = 0; i < aLis.length; i++) {
+      for (let i = 0; i < aLis.length; i++) {
         // 拿到当前按钮的下标
         aLis[i].index = i;
         aLis[i].onclick = function () {
           // 取消所有按钮的样式
-          for (var j = 0; j < aLis.length; j++) {
+          for (let j = 0; j < aLis.length; j++) {
             aLis[j].className = '';
             aDivs[j].style.display = 'none';
           }
@@ -405,22 +535,6 @@ export default {
   color: #A4A4A4;
 }
 
-/* 添加、删除按钮 */
-#projectList .member_btns button {
-  width: 60px;
-  height: 40px;
-  background: white;
-  border: 1px solid #A4A4A4;
-  border-radius: 5px;
-  position: relative;
-  top: 150px;
-  right: 100px;
-}
-
-#projectList .member_btns button:hover {
-  cursor: pointer;
-}
-
 /* 展示列表 */
 #projectList .member_table {
   margin: 0 20px 0 10px;
@@ -444,50 +558,16 @@ export default {
   background: #f9f9f9;
 }
 
-#projectList .member_table button {
-  width: 100%;
-  height: 31px;
-  border: none;
-  border-left: 1px solid #A4A4A4;
-  background: #f9f9f9;
-  cursor: pointer;
-}
-
-#projectList .member_table th:first-child,
-#projectList .member_table td:first-child,
-#projectList .member_table td:last-child {
-  text-align: center;
-  text-indent: 0;
-}
-
 #projectList .member_table tr input:hover {
   cursor: pointer;
 }
 
-#projectList .member_table td {
+#projectList .member_table tbody {
+  height: 32px;
   text-indent: 12px;
 }
 
-#projectList .member_table input {
-  width: 80%;
-}
-
-/* 换页 */
-#projectList .member_page {
-  font-size: 0;
-  line-height: 24px;
-  margin: 15px 48px 0 0;
-}
-
-#projectList .member_page a {
-  border: 1px #A4A4A4 solid;
-  padding: 6px 9px;
-  font-size: 12px;
+#add span {
   margin-left: 10px;
-}
-
-#projectList .member_page a.active {
-  background: #D80C1C;
-  color: white;
 }
 </style>

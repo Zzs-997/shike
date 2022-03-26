@@ -18,7 +18,8 @@
       </li>
       <li>
         <i class="iconfont icon-shouye"></i>
-        <router-link to="#">食客官网</router-link>
+        <a href=""></a>
+        <router-link to="">食客官网</router-link>
       </li>
       <li>
         <i class="iconfont icon-tuichu"></i>

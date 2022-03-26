@@ -37,23 +37,18 @@
         </div>
         <!-- 密码管理 -->
         <div>
-          <div class="list_mm">
-            旧密码：
-            <input type="text" placeholder="请输入旧密码">
+          <div class="list_mm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;旧密码：<input type="text" placeholder="请输入旧密码">
           </div>
           <div class="list_mm clear">
-            <span class="l">新的密码：</span>
-            <input class="l" type="password" placeholder="请输入新密码">
+            <span class="l">&nbsp;&nbsp;&nbsp;&nbsp;新的密码：</span><input class="l" type="password" placeholder="请输入新密码">
             <p class="l">
               * 密码由8-16位字符（字母、数字、_@#.特殊字符）组成!
             </p>
           </div>
-          <div class="list_mm">
-            确认新密码：
-            <input type="password" placeholder="请再次输入新密码">
+          <div class="list_mm">确认新密码：<input type="password" placeholder="请再次输入新密码">
           </div>
           <div class="list_mm">
-            <button class="submit">提交</button>
+            <button type="button" class="submit">提交</button>
           </div>
         </div>
         <!-- 消费记录 -->
@@ -207,8 +202,13 @@ export default {
   font-size: 14px;
   line-height: 24px;
 }
+#introduction .list_mm button{
+  margin-left: 30px;
+  width: 200px;
+  height: 30px;
+}
 
-/* 消费记录 */
+  /* 消费记录 */
 /* 展示列表 */
 #introduction .food_table {
   margin: 30px 20px 0 30px;

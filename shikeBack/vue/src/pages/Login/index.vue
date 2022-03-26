@@ -3,21 +3,65 @@
     <div class="form-box">
       <div class="title-box">
         <div id="back"></div>
-        <div class="toggle-title">后台登录</div>
+        <div class="toggle-title">食客后台登录</div>
       </div>
       <form id="login" class="input-group">
-        <input type="text" class="input-field" placeholder="手机号/邮箱" required>
-        <input type="text" class="input-field" placeholder="密码" required>
+        <input type="text" class="input-field" placeholder="用户名" required>
+        <input type="password" class="input-field" placeholder="密码" required>
         <input type="checkbox" class="check-box"><span>记住密码</span>
-        <button type="submit" class="submit-btn">登录</button>
+        <button type="button" class="submit-btn" @click="submit">登录</button>
       </form>
     </div>
   </div>
 </template>
 
+
 <script>
 export default {
   name: '',
+  mounted() {
+    this.write();
+  },
+  methods: {
+    write() {
+      let oLogin = document.getElementById("login");
+      let oInputs = oLogin.getElementsByTagName("input");
+      if (this.cookie("name") && this.cookie("password")) {
+        oInputs[0].value = this.cookie("name");
+        oInputs[1].value = this.cookie("password");
+      }
+    },
+    submit() {
+      let oLogin = document.getElementById("login");
+      let oInputs = oLogin.getElementsByTagName("input");
+      let form = {
+        name: oInputs[0].value,
+        password: oInputs[1].value
+      };
+      if (!form.name) {
+        alert("用户名不能为空")
+        return false;
+      }
+      if (!form.password) {
+        alert("密码不能为空")
+        return false;
+      }
+      if (form.name == "zzs" && form.password == "123456") {
+        // request.post('/login', form).then(res => {
+        //   this.$router.push("/Home");
+        // });
+        if (oInputs[2].checked == true) {
+          this.cookie("name", form.name, {
+            expires: 1
+          });
+          this.cookie("password", form.password, {
+            expires: 1
+          });
+        }
+        this.$router.push("/Home");
+      }
+    }
+  }
 }
 </script>
 
@@ -30,8 +74,7 @@ export default {
 .hero {
   height: 100%;
   width: 100%;
-  background: url(./images/background.png);
-  background-position: top;
+  background: url(./images/background.png) top;
   background-size: cover;
   position: absolute;
 }
@@ -42,21 +85,20 @@ export default {
   position: relative;
   margin: 6% auto;
   background: #fff;
-  padding: 5px;
   overflow: hidden;
 }
 
 .title-box {
-  width: 220px;
-  margin: 35px auto;
+  width: 320px;
+  margin: 30px auto;
   position: relative;
   box-shadow: 0 0 20px 9px #ff61241f;
   border-radius: 30px;
 }
 
 .toggle-title {
-  width: 150px;
-  padding: 10px 30px;
+  width: 100%;
+  padding: 10px 0;
   background: transparent;
   border: 0;
   outline: none;
@@ -71,7 +113,7 @@ export default {
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, #ff105f, #ffad06);
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .input-group {

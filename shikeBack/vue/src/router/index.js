@@ -11,12 +11,13 @@ import Member from "../pages/Member";
 import Set from "../pages/Set";
 
 export default new Router({
+  mode:"history",
   //配置路由，有很多个，所以用数组保存
   routes: [
     //重定向，在项目跑起来的时候，访问立马把它定向到首页
     {
       path: '*',
-      redirect: '/home'
+      redirect: '/Login'
     },
     {
       path: '/Food',
