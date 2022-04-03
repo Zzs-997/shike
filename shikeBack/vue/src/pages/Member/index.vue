@@ -43,7 +43,11 @@
                 &nbsp; &nbsp; 密码：<input type="password" placeholder="密码" required>
                 <div class="clear">
                   <p class="l">会员等级：5（默认）</p>
+<<<<<<< HEAD
                   <p class="l">
+=======
+                  <p class="l" style="color: #D80C1C">
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
                     *会员分为1~5级&nbsp;&nbsp;&nbsp;1级：9.8折&nbsp;&nbsp;&nbsp;2级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;4级：8.5折&nbsp;&nbsp;&nbsp;5级：8折
                   </p>
                 </div>
@@ -103,6 +107,7 @@
               <thead>
               <tr>
                 <th width="100">手机号</th>
+<<<<<<< HEAD
                 <th width="150">日期</th>
                 <th width="150">菜品评价</th>
                 <th width="200">消费记录</th>
@@ -116,6 +121,133 @@
             <div id="bill" class="member_search l">
               <input type="text" placeholder="请输入手机号">
               <button @click="findBill">
+=======
+                <th width="100">日期</th>
+                <th width="200">菜品评价</th>
+                <th width="200">消费记录</th>
+                <th width="50">用户名</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.01</td>
+                <td>好吃实惠！</td>
+                <td>红烧肉</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.03</td>
+                <td>好吃实惠！</td>
+                <td>茄子炒肉</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.05</td>
+                <td>好吃实惠！</td>
+                <td>红烧排骨</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.07</td>
+                <td>好吃实惠！</td>
+                <td>剁椒鱼头</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.09</td>
+                <td>好吃实惠！</td>
+                <td>啤酒鸭</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.11</td>
+                <td>好吃实惠！</td>
+                <td>干锅牛腩</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.13</td>
+                <td>好吃实惠！</td>
+                <td>土豆烧鸡</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.15</td>
+                <td>好吃实惠！</td>
+                <td>黄豆鸡脚</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+              </tr>
+              </tbody>
+            </table>
+            <!-- 搜索框 -->
+            <div class="member_search l">
+              <input type="text" placeholder="请输入手机号">
+              <button>
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
                 <i class="iconfont icon-sousuo"></i>
               </button>
             </div>
@@ -137,6 +269,7 @@ export default {
     this.test();
   },
   methods: {
+<<<<<<< HEAD
     //查找会员账单
     findBill(){
       let oBill = document.getElementById("bill");
@@ -158,13 +291,19 @@ export default {
         alert("查询失败，未查询到此手机号的会员")
       });
     },
+=======
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
     //查找会员，并且把会员添加到更改会员信息的列表
     findModMember() {
       let oMod = document.getElementById("modifyMember");
       let oModTable = document.getElementById("modifyTable");
       let oInput = oMod.getElementsByTagName("input");
       let Phone = oInput[0].value;
+<<<<<<< HEAD
       request.get('/member/selectMemberBymemberPhone/' + Phone).then(function (result) {
+=======
+      request.get('/member/selectMemberByMemberPhone/' + Phone).then(function (result) {
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
         let arr = result.data;
         let str = `<tr>
                     <td>${arr.name}</td>
@@ -233,7 +372,11 @@ export default {
         alert("密码不能为空");
         return false;
       }
+<<<<<<< HEAD
       request.get('/member/selectMemberBymemberPhone/' + data.phone).then(function (result) {
+=======
+      request.get('/member/selectMemberByMemberPhone/' + data.phone).then(function (result) {
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
         alert("对不起，该号码已被注册");
       }).catch(function (msg) {
         request.post('/member/createMember', data).then(function (result) {
@@ -243,6 +386,7 @@ export default {
           return false;
         });
       });
+
     },
     //添加会员验证
     test() {
@@ -271,8 +415,13 @@ export default {
       // 邮箱验证
       aInputs[2].onblur = function () {
         let oValue2 = aInputs[2].value;
+<<<<<<< HEAD
         let reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
         if (!reg.test(oValue2)) {
+=======
+
+        if (oValue2.length < 5) {
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
           oText2.innerHTML = "* 邮箱地址有误！";
           oText2.style.color = "red";
         } else {

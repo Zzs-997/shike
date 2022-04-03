@@ -219,7 +219,13 @@ export default {
   font-size: 14px;
   line-height: 24px;
 }
+#introduction .list_mm button{
+  margin-left: 30px;
+  width: 200px;
+  height: 30px;
+}
 
+<<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
 #introduction .list_mm button {
   margin-left: 30px;
   width: 200px;
@@ -227,6 +233,9 @@ export default {
 }
 
 /* 消费记录 */
+=======
+  /* 消费记录 */
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f:shikeFront/src/pages/Member/Introduction/index.vue
 /* 展示列表 */
 #introduction .food_table {
   margin: 30px 20px 0 30px;

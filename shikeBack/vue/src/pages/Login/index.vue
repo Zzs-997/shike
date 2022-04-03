@@ -59,8 +59,11 @@ export default {
           });
         }
         this.$router.push("/Home");
+<<<<<<< HEAD
       }else{
         alert("用户名或密码错误");
+=======
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
       }
     }
   }

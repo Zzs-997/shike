@@ -6,7 +6,13 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+<<<<<<< HEAD
 
+=======
+import org.springframework.stereotype.Repository;
+
+@Repository
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 @Mapper
 public interface MemberMapper {
     long countByExample(MemberExample example);
