@@ -14,17 +14,23 @@ public class MemberController {
     private MemberService memberService;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @GetMapping("/selectMemberBymemberPhone/{memberPhone}")
     public ResponseResult<Member> selectMemberBymemberPhone(@PathVariable String memberPhone){
         Member member = memberService.selectMemberBymemberPhone(memberPhone);
         return new ResponseResult<>(ResponseResult.CodeStatus.OK,"查询用户",member);
 //        使用：http://localhost:9090/member/selectMemberBymemberPhone/13707077461
 =======
+=======
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
     @GetMapping("/selectMemberByMemberPhone/{memberPhone}")
     public ResponseResult<Member> selectMemberByMemberPhone(@PathVariable String memberPhone){
         Member member = memberService.selectMemberByMemberPhone(memberPhone);
         return new ResponseResult<>(ResponseResult.CodeStatus.OK,"查询用户",member);
 //        使用：http://localhost:9090/member/selectMemberByMemberPhone/13707077461
+<<<<<<< HEAD
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
+=======
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
     }
 

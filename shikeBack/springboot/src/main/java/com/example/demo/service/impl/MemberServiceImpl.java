@@ -19,7 +19,11 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Member selectMemberBymemberPhone(String memberPhone){
+=======
+    public Member selectMemberByMemberPhone(String memberPhone){
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 =======
     public Member selectMemberByMemberPhone(String memberPhone){
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f

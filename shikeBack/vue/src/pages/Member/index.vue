@@ -44,7 +44,11 @@
                 <div class="clear">
                   <p class="l">会员等级：5（默认）</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <p class="l">
+=======
+                  <p class="l" style="color: #D80C1C">
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 =======
                   <p class="l" style="color: #D80C1C">
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
@@ -108,6 +112,7 @@
               <tr>
                 <th width="100">手机号</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <th width="150">日期</th>
                 <th width="150">菜品评价</th>
                 <th width="200">消费记录</th>
@@ -122,6 +127,8 @@
               <input type="text" placeholder="请输入手机号">
               <button @click="findBill">
 =======
+=======
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
                 <th width="100">日期</th>
                 <th width="200">菜品评价</th>
                 <th width="200">消费记录</th>
@@ -212,6 +219,16 @@
                 <td>好吃实惠！</td>
                 <td>鱼香肉丝</td>
                 <td>曾子升</td>
+<<<<<<< HEAD
+              </tr>
+              <tr>
+                <td>15207074966</td>
+                <td>2022.01.20</td>
+                <td>好吃实惠！</td>
+                <td>鱼香肉丝</td>
+                <td>曾子升</td>
+=======
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
               </tr>
               <tr>
                 <td>15207074966</td>
@@ -225,6 +242,8 @@
                 <td>2022.01.20</td>
                 <td>好吃实惠！</td>
                 <td>鱼香肉丝</td>
+<<<<<<< HEAD
+=======
                 <td>曾子升</td>
               </tr>
               <tr>
@@ -232,6 +251,7 @@
                 <td>2022.01.20</td>
                 <td>好吃实惠！</td>
                 <td>鱼香肉丝</td>
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
                 <td>曾子升</td>
               </tr>
               <tr>
@@ -270,6 +290,7 @@ export default {
   },
   methods: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     //查找会员账单
     findBill(){
       let oBill = document.getElementById("bill");
@@ -293,6 +314,8 @@ export default {
     },
 =======
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
+=======
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
     //查找会员，并且把会员添加到更改会员信息的列表
     findModMember() {
       let oMod = document.getElementById("modifyMember");
@@ -300,7 +323,11 @@ export default {
       let oInput = oMod.getElementsByTagName("input");
       let Phone = oInput[0].value;
 <<<<<<< HEAD
+<<<<<<< HEAD
       request.get('/member/selectMemberBymemberPhone/' + Phone).then(function (result) {
+=======
+      request.get('/member/selectMemberByMemberPhone/' + Phone).then(function (result) {
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 =======
       request.get('/member/selectMemberByMemberPhone/' + Phone).then(function (result) {
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
@@ -373,7 +400,11 @@ export default {
         return false;
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
       request.get('/member/selectMemberBymemberPhone/' + data.phone).then(function (result) {
+=======
+      request.get('/member/selectMemberByMemberPhone/' + data.phone).then(function (result) {
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 =======
       request.get('/member/selectMemberByMemberPhone/' + data.phone).then(function (result) {
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
@@ -416,8 +447,13 @@ export default {
       aInputs[2].onblur = function () {
         let oValue2 = aInputs[2].value;
 <<<<<<< HEAD
+<<<<<<< HEAD
         let reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
         if (!reg.test(oValue2)) {
+=======
+
+        if (oValue2.length < 5) {
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 =======
 
         if (oValue2.length < 5) {
