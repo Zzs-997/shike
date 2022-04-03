@@ -225,6 +225,7 @@ export default {
   height: 30px;
 }
 <<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
+<<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
 
 <<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
 #introduction .list_mm button {
@@ -235,6 +236,10 @@ export default {
 
 /* 消费记录 */
 =======
+  /* 消费记录 */
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f:shikeFront/src/pages/Member/Introduction/index.vue
+=======
+
   /* 消费记录 */
 >>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f:shikeFront/src/pages/Member/Introduction/index.vue
 =======

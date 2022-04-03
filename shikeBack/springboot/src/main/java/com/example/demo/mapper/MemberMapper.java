@@ -8,7 +8,13 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+import org.springframework.stereotype.Repository;
+
+@Repository
+>>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
 =======
 import org.springframework.stereotype.Repository;
 
