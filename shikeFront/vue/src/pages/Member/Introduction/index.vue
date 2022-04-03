@@ -16,20 +16,20 @@
         <!-- 基本资料 -->
         <div style="display: block;">
           <div class="list_zl clear">
-            <span class="l">姓名</span>
-            <p class="message l">曾子升</p>
+            <span class="l">姓名：</span>
+            <p class="message l"></p>
           </div>
           <div class="list_zl clear">
-            <span class="l">邮箱</span>
-            <p class="message l">zeng.zs@outlook.com</p>
+            <span class="l">邮箱：</span>
+            <p class="message l"></p>
           </div>
           <div class="list_zl clear">
-            <span class="l">手机号</span>
-            <p class="message l">15207074966</p>
+            <span class="l">手机号：</span>
+            <p class="message l"></p>
           </div>
           <div class="list_zl clear">
-            <span class="l">会员等级</span>
-            <p class="message l">5</p>
+            <span class="l">会员等级：</span>
+            <p class="message l"></p>
             <p class="message l">
               *会员分为1~5级&nbsp;&nbsp;&nbsp;1级：9.8折&nbsp;&nbsp;&nbsp;2级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;4级：8.5折&nbsp;&nbsp;&nbsp;5级：8折
             </p>
@@ -118,12 +118,29 @@
 </template>
 
 <script>
+import request from "../../../../utils/request";
+
 export default {
   name: '',
   mounted() {
-    this.change()
+    this.change();
+    this.write_member();
   },
   methods: {
+    write_member() {
+      let oDetail = document.getElementById("detail");
+      let aPs = oDetail.getElementsByTagName("p");
+      if(this.cookie("phone")){
+        let phone = this.cookie("phone");
+        request.get('/member/selectMemberBymemberPhone/' + phone).then(function (result) {
+          let arr = result.data;
+          aPs[0].innerHTML += arr.name;
+          aPs[1].innerHTML += arr.email;
+          aPs[2].innerHTML += arr.phone;
+          aPs[3].innerHTML += arr.rank;
+        });
+      }
+    },
     change() {
       let oDiv1 = document.getElementById("setlist_btns");
       let oDiv2 = document.getElementById("detail");
@@ -202,13 +219,14 @@ export default {
   font-size: 14px;
   line-height: 24px;
 }
-#introduction .list_mm button{
+
+#introduction .list_mm button {
   margin-left: 30px;
   width: 200px;
   height: 30px;
 }
 
-  /* 消费记录 */
+/* 消费记录 */
 /* 展示列表 */
 #introduction .food_table {
   margin: 30px 20px 0 30px;
