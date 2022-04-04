@@ -22,6 +22,18 @@ export default {
     Header,
     Footer,
     Menu
+  },
+  mounted() {
+    this.ifLogin();
+  },
+  methods:{
+    //阻止在退出账号后，在输入框中返回系统中
+    ifLogin(){
+      let oApp = document.getElementById("app");
+      if (!this.cookie("name")){
+        this.$router.push("Login");
+      }
+    }
   }
 }
 </script>

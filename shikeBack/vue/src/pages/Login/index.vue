@@ -47,9 +47,6 @@ export default {
         return false;
       }
       if (form.name == "zzs" && form.password == "123456") {
-        // request.post('/login', form).then(res => {
-        //   this.$router.push("/Home");
-        // });
         if (oInputs[2].checked == true) {
           this.cookie("name", form.name, {
             expires: 1
@@ -59,17 +56,8 @@ export default {
           });
         }
         this.$router.push("/Home");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       }else{
         alert("用户名或密码错误");
-=======
->>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
-=======
->>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
-=======
->>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f
       }
     }
   }
@@ -172,7 +160,4 @@ span {
   left: 50px;
 }
 
-#register {
-  left: 450px
-}
 </style>

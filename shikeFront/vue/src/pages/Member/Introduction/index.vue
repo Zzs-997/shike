@@ -31,7 +31,7 @@
             <span class="l">会员等级：</span>
             <p class="message l"></p>
             <p class="message l">
-              *会员分为1~5级&nbsp;&nbsp;&nbsp;1级：9.8折&nbsp;&nbsp;&nbsp;2级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;4级：8.5折&nbsp;&nbsp;&nbsp;5级：8折
+              *会员分为1~5级&nbsp;&nbsp;&nbsp;5级：9.8折&nbsp;&nbsp;&nbsp;4级：9.5折&nbsp;&nbsp;&nbsp;3级：9折&nbsp;&nbsp;&nbsp;2级：8.5折&nbsp;&nbsp;&nbsp;1级：8折
             </p>
           </div>
         </div>
@@ -101,16 +101,6 @@
             </tr>
             </tbody>
           </table>
-          <div class="food_page l">
-            <a href="#">共18条</a>
-            <a href="#">首页</a>
-            <a href="#">上一页</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">下一页</a>
-            <a href="#">尾页</a>
-          </div>
         </div>
       </div>
     </div>
@@ -134,10 +124,10 @@ export default {
         let phone = this.cookie("phone");
         request.get('/member/selectMemberBymemberPhone/' + phone).then(function (result) {
           let arr = result.data;
-          aPs[0].innerHTML += arr.name;
-          aPs[1].innerHTML += arr.email;
-          aPs[2].innerHTML += arr.phone;
-          aPs[3].innerHTML += arr.rank;
+          aPs[0].innerHTML = arr.name;
+          aPs[1].innerHTML = arr.email;
+          aPs[2].innerHTML = arr.phone;
+          aPs[3].innerHTML = arr.rank;
         });
       }
     },
@@ -224,10 +214,6 @@ export default {
   width: 200px;
   height: 30px;
 }
-<<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
-<<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
-
-<<<<<<< HEAD:shikeFront/vue/src/pages/Member/Introduction/index.vue
 #introduction .list_mm button {
   margin-left: 30px;
   width: 200px;
@@ -235,17 +221,6 @@ export default {
 }
 
 /* 消费记录 */
-=======
-  /* 消费记录 */
->>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f:shikeFront/src/pages/Member/Introduction/index.vue
-=======
-
-  /* 消费记录 */
->>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f:shikeFront/src/pages/Member/Introduction/index.vue
-=======
-
-  /* 消费记录 */
->>>>>>> 5f2dcaed47705f8fc4f22c44f454323bd15b5c3f:shikeFront/src/pages/Member/Introduction/index.vue
 /* 展示列表 */
 #introduction .food_table {
   margin: 30px 20px 0 30px;
@@ -277,24 +252,5 @@ export default {
 
 #introduction .food_table td {
   text-indent: 12px;
-}
-
-/* 换页 */
-#introduction .food_page {
-  font-size: 0;
-  line-height: 24px;
-  margin: 30px 48px 0 30px;
-}
-
-#introduction .food_page a {
-  border: 1px #A4A4A4 solid;
-  padding: 6px 9px;
-  font-size: 12px;
-  margin-left: 10px;
-}
-
-#introduction .food_page a.active {
-  background: #D80C1C;
-  color: white;
 }
 </style>

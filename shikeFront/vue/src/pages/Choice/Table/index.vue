@@ -1,5 +1,11 @@
 <template>
   <div id="table" class="container-fluid">
+    <div id="wechat_pay">
+      <img src="./images/微信支付码.jpg">
+      <p>您是<span id="pay_rank"></span>级会员，可享受<span id="pay_discount"></span>折优惠<br>请支付<span id="pay_num">0</span>元</p>
+      <button id="pay_true" @click="pay_true">支付完成</button>
+      <button id="pay_false" @click="pay_false">取消支付</button>
+    </div>
     <table class="food_table">
       <thead>
       <tr>
@@ -90,18 +96,8 @@
       </tr>
       </tbody>
     </table>
-    <div class="food_page l">
-      <a href="#">共12条</a>
-      <a href="#">首页</a>
-      <a href="#">上一页</a>
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">下一页</a>
-      <a href="#">尾页</a>
-    </div>
     <div class="allprice">
-      <a href="">结账</a>
+      <button @click="pay">结账</button>
       <p>合计<span class="total_price">0</span>元</p>
       <p>已选中菜品<span class="total_num">0</span>种</p>
     </div>
@@ -109,12 +105,54 @@
 </template>
 
 <script>
+import request from "../../../../utils/request";
+
 export default {
   name: 'Table',
   mounted() {
     this.Shop()
   },
   methods: {
+    //支付成功
+    pay_true() {
+      alert("祝你用餐愉快");
+      this.$router.go(0);
+    },
+    //取消支付
+    pay_false() {
+      let oWecharPay = document.getElementById("wechat_pay");
+      oWecharPay.style.display = "none";
+    },
+    pay() {
+      //折扣
+      let discount = {
+        5: 9.8,
+        4: 9.5,
+        3: 9,
+        2: 8.5,
+        1: 8
+      }
+      if (this.cookie("phone")) {
+        let oWecharPay = document.getElementById("wechat_pay");
+        let oPay_rank = document.getElementById("pay_rank");
+        let oPay_discount = document.getElementById("pay_discount");
+        let oPay_num = document.getElementById("pay_num");
+        let oTotalPrice = document.querySelector(".total_price");
+        oWecharPay.style.display = "block";
+        //  获得会员等级并更新支付页面
+        if (this.cookie("phone")) {
+          request.get('/member/selectMemberBymemberPhone/' + this.cookie("phone")).then(function (result) {
+            let arr = result.data;
+            oPay_rank.innerHTML = arr.rank;
+            oPay_discount.innerHTML = discount[arr.rank];
+            oPay_num.innerHTML = (parseInt(oTotalPrice.innerHTML)*discount[arr.rank]*0.1).toFixed(2);
+          });
+        }
+      } else {
+        alert("请先登录");
+        this.$router.push("/Login");
+      }
+    },
     Shop() {
       // 获取全部元素数组
       let aAdd = document.querySelectorAll(".add");
@@ -126,7 +164,6 @@ export default {
       let oTotalPrice = document.querySelector(".total_price");
 
       let len = aNum.length; //4
-
       /*
           在开发过程中 数据来源于后台数据库
           前端只是先获取了后台给我们的数据之后，对应渲染HTML页面
@@ -134,6 +171,7 @@ export default {
       /*
          假装我们获取了后台的数据
        */
+      //菜品单价和数量
       let data = [
         {dj: 6.88, number: 0},
         {dj: 12, number: 0},
@@ -157,7 +195,6 @@ export default {
           }
         };
       }
-
       //获取总数和总价的函数
       function getTotal() {
         // 总数
@@ -173,7 +210,6 @@ export default {
           totalPrice: p
         }
       }
-
       // 更新页面数据
       function updateView(i) {
         aNum[i].innerHTML = data[i].number;
@@ -187,6 +223,74 @@ export default {
 </script>
 
 <style scoped>
+/*微信支付弹窗*/
+#wechat_pay {
+  position: absolute;
+  left: 440px;
+  margin-top: 54px;
+  width: 650px;
+  height: 512px;
+  background: #23AC3A;
+  display: none;
+}
+
+#wechat_pay img {
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  width: 300px;
+  height: 400px;
+}
+
+#wechat_pay p {
+  position: absolute;
+  left: 350px;
+  top: 200px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#wechat_pay span {
+  color: #D80C1C;
+  font-size: 22px;
+}
+
+#wechat_pay #pay_true {
+  position: absolute;
+  left: 350px;
+  top: 375px;
+  width: 100px;
+  height: 50px;
+  background: white;
+  border: 1px solid #A4A4A4;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#wechat_pay #pay_false {
+  position: absolute;
+  right: 25px;
+  top: 375px;
+  width: 100px;
+  height: 50px;
+  background: white;
+  border: 1px solid #A4A4A4;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*购物车表*/
 #table {
   background: #f8f8f8;
   min-height: 566px;
@@ -272,7 +376,7 @@ table tr td.number span.num {
 }
 
 /* 结账 */
-.allprice a {
+.allprice button {
   float: right;
   width: 100px;
   height: 50px;
@@ -285,24 +389,6 @@ table tr td.number span.num {
   text-align: center;
   line-height: 50px;
   font-size: 20px;
-}
-
-/* 换页 */
-.food_page {
-  font-size: 0;
-  line-height: 24px;
-  margin: 30px 0 0 150px;
-}
-
-.food_page a {
-  border: 1px #A4A4A4 solid;
-  padding: 6px 9px;
-  font-size: 12px;
-  margin-left: 10px;
-}
-
-.food_page a.active {
-  background: #D80C1C;
-  color: white;
+  cursor: pointer;
 }
 </style>

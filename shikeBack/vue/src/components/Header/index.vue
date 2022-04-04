@@ -23,7 +23,7 @@
       </li>
       <li>
         <i class="iconfont icon-tuichu"></i>
-        <router-link to="/Login">退出</router-link>
+        <a @click="exit">退出</a>
       </li>
     </ul>
   </header>
@@ -32,7 +32,16 @@
 <script>
 export default {
   name: '',
+  methods: {
+    exit() {
+      this.cookie("name", "");
+      this.cookie("password", "");
+      location.replace(this.href);
+      this.$router.push("Login");
+    }
+  }
 }
+
 </script>
 
 <style scoped>
@@ -91,6 +100,7 @@ export default {
 
 #header .header_nav a {
   color: white;
+  cursor: pointer;
 }
 
 #header .header_nav i {

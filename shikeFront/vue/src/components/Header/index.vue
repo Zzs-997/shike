@@ -20,7 +20,11 @@
       </li>
       <li>
         <!--        声明式导航，务必要有to属性-->
-        <router-link to="/login">登录</router-link>
+        <a @click="login">登录</a>
+      </li>
+      <li>
+        <!--        声明式导航，务必要有to属性-->
+        <a @click="exit">退出登录</a>
       </li>
     </ul>
   </div>
@@ -28,15 +32,32 @@
 <script>
 export default {
   methods: {
-    jump(selector) {
-      let anchor = this.$el.querySelector(selector);
-      anchor.scrollIntoView();
+    login() {
+      if (this.cookie("phone")){
+        alert("您已登录");
+      }else{
+        this.$router.push("/Login");
+      }
+    },
+    exit(){
+      if (this.cookie("phone")){
+        this.cookie("phone","")
+        this.cookie("member_password","")
+        this.$router.push("/Login");
+      }else{
+        alert("您还未登录，请登录");
+        this.$router.push("/Login");
+      }
     }
   }
 };
 </script>
 
 <style scoped>
+a {
+  cursor: pointer;
+}
+
 #head {
   height: 100px;
   padding-bottom: 8px;

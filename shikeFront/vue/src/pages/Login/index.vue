@@ -3,7 +3,7 @@
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
-        <button type="button" class="toggle-btn" v-on:click="login">登录</button>
+        <button id="login_button" type="button" class="toggle-btn" v-on:click="login">登录</button>
         <button type="button" class="toggle-btn" v-on:click="register">注册</button>
       </div>
       <div id="login" class="input-group">
@@ -138,6 +138,7 @@ export default {
         }).catch(function (msg) {
           request.post('/member/createMember', data).then(function (result) {
             alert("注册成功");
+            document.getElementById("login_button").click();
           }).catch(function (meg) {
             alert("注册失败");
             return false;
