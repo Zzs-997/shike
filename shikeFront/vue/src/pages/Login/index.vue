@@ -97,7 +97,7 @@ export default {
         }
       }).catch(function (msg) {
         console.log(msg);
-        alert("手机号/邮箱不存在")
+        alert("登录失败")
       });
     },
 //注册
