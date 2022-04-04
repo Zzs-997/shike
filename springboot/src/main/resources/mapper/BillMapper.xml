@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BillMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.domain.Bill">
+    <!--@mbg.generated-->
+    <!--@Table bill-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="report" jdbcType="VARCHAR" property="report" />
+    <result column="foods" jdbcType="VARCHAR" property="foods" />
+    <result column="money" jdbcType="FLOAT" property="money" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--@mbg.generated-->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--@mbg.generated-->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, phone, `time`, report, foods, money
+  </sql>
+  <select id="selectByExample" parameterType="com.example.demo.domain.BillExample" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from bill
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from bill
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.demo.domain.BillExample">
+    <!--@mbg.generated-->
+    delete from bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.demo.domain.Bill" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bill (phone, `time`, report, 
+      foods, money)
+    values (#{phone,jdbcType=CHAR}, #{time,jdbcType=TIMESTAMP}, #{report,jdbcType=VARCHAR}, 
+      #{foods,jdbcType=VARCHAR}, #{money,jdbcType=FLOAT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.demo.domain.Bill" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="time != null">
+        `time`,
+      </if>
+      <if test="report != null">
+        report,
+      </if>
+      <if test="foods != null">
+        foods,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="phone != null">
+        #{phone,jdbcType=CHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="report != null">
+        #{report,jdbcType=VARCHAR},
+      </if>
+      <if test="foods != null">
+        #{foods,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=FLOAT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.demo.domain.BillExample" resultType="java.lang.Long">
+    <!--@mbg.generated-->
+    select count(*) from bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--@mbg.generated-->
+    update bill
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=CHAR},
+      </if>
+      <if test="record.time != null">
+        `time` = #{record.time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.report != null">
+        report = #{record.report,jdbcType=VARCHAR},
+      </if>
+      <if test="record.foods != null">
+        foods = #{record.foods,jdbcType=VARCHAR},
+      </if>
+      <if test="record.money != null">
+        money = #{record.money,jdbcType=FLOAT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--@mbg.generated-->
+    update bill
+    set id = #{record.id,jdbcType=INTEGER},
+      phone = #{record.phone,jdbcType=CHAR},
+      `time` = #{record.time,jdbcType=TIMESTAMP},
+      report = #{record.report,jdbcType=VARCHAR},
+      foods = #{record.foods,jdbcType=VARCHAR},
+      money = #{record.money,jdbcType=FLOAT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.domain.Bill">
+    <!--@mbg.generated-->
+    update bill
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=CHAR},
+      </if>
+      <if test="time != null">
+        `time` = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="report != null">
+        report = #{report,jdbcType=VARCHAR},
+      </if>
+      <if test="foods != null">
+        foods = #{foods,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=FLOAT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.domain.Bill">
+    <!--@mbg.generated-->
+    update bill
+    set phone = #{phone,jdbcType=CHAR},
+      `time` = #{time,jdbcType=TIMESTAMP},
+      report = #{report,jdbcType=VARCHAR},
+      foods = #{foods,jdbcType=VARCHAR},
+      money = #{money,jdbcType=FLOAT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
